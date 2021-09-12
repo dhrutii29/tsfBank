@@ -1,0 +1,132 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/icons8-bank-50.png' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>Transfer</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .transfer-section {
+            background: #fff;
+        }
+        .alert {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8d7da;
+            color: rgb(158, 9, 9);
+            border-radius: 10px;
+            font-size: 1.7rem;
+        }
+        .closebtn {
+            margin-left: 15px;
+            color: #666;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+            color: black;
+        }
+        .alert-suc{
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #d4edda;
+            color: rgb(14, 121, 4);
+            border-radius: 10px;
+            font-size: 1.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo"><span>TSF </span>Bank</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar" class="fas fa-bars"></label>
+        <nav class="navbar">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'customers' %}">Customers</a>
+            <a href="{% url 'transfer' %}">Transfer</a>
+            <a href="{% url 'transactions' %}">Transactions</a>
+        </nav>
+    </header>
+
+    <section class="contact transfer-section" id="contact">
+        <div class="image">
+            <img src="{% static 'images/undraw_Secure_server_re_8wsq.svg' %}" alt="messageUs"/>
+        </div>
+        
+        <form action="{% url 'transfer' %}" method="post">
+            {% csrf_token %}
+            <h1 class="heading">Transfer Money</h1>
+            <div class="inputBox">
+                <input type="email" name="s_email" required>
+                <label>Your Email Address</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" name="r_email" required>
+                <label>Receiver's Email Address</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" name="amount" required>
+                <label>Amount</label>
+            </div>
+            
+            <input type="submit" class="btn" value="Transfer">
+            {% if error %}
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ error }}
+            </div>
+            {% endif %} {% if message %}
+            <div class="alert-suc">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ message }}
+            
+            </div>
+            {% endif %}
+        </form>
+    </section>
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+
+            <a href="https://www.instagram.com/dhrutiii._/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/DhrutiSeksaria" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/dhrutiseksaria/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/dhrutii29" target="_blank" class="github"><i class="fab fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <p class="footer-links">
+                <a class="link-1" href="{%  url 'index' %}#home">Home</a>
+
+                <a href="{%  url 'index' %}#features">Features</a>
+
+                <a href="{%  url 'index' %}#review">Testimonial</a>
+
+                <a href="{%  url 'index' %}#contact">Contact</a>
+            </p>
+
+            <p>TSF Bank &copy; 2021</p>
+        </div>
+
+    </footer>
+</body>
+</html>

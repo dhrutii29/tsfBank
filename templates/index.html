@@ -1,0 +1,178 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/icons8-bank-50.png' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>TSF Bank</title>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo"><span>TSF </span>Bank</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar" class="fas fa-bars"></label>
+        <nav class="navbar">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'customers' %}">Customers</a>
+            <a href="{% url 'transfer' %}">Transfer</a>
+            <a href="{% url 'transactions' %}">Transactions</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content"><br/>
+            <h3><span>Secure</span> Banking System</h3>
+            <p>Digital Banking has revolutionised the banking sector by facilitating quicker and more convenient transactions. You can carry out hassle-free transactions from the comfort of your home without needing to worry about the security of your money.</p>
+            <a href="{% url 'transfer' %}" class="btn">Transfer Money</a>
+
+        </div>
+
+        <div class="image">
+            <img src="{% static 'images/undraw_digital_currency_qpak.svg' %}" alt="hero-images"/>
+        </div>
+    </section>
+    <section class="features" id="features">
+        <h1 class="heading">Our Features</h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="{% static 'images/undraw_people_tax5.svg' %}" alt=""/>
+                <p>Customer satisfaction is our top priority.</p>
+                <a href="{% url 'customers' %}" class="btn">View Customers</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/undraw_transfer_money_rywa.svg' %}" alt=""/>
+                <p>Transfer Money securely with just a click</p>
+                <a href="{% url 'transfer' %}" class="btn">Transfer Money</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/undraw_online_transactions_02ka.svg' %}" alt=""/>
+                <p>Up-to-date transaction history</p>
+                <a href="{% url 'transactions' %}" class="btn">Transactions</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading">Testimonial</h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="{% static 'images/avataaars.svg' %}" alt="review1"/>
+                    <h3>Dhruti Seksaria</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="comment">
+                        Special Thanks to the Team at the TSF Bank!!! Exceptional Customer Service. I have banked here for a number of years and can’t say enough about the staff. I highly recommend banking here.
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="{% static 'images/avatar2.svg' %}" alt="review2"/>
+                    <h3>Khushbu Ravaria</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="comment">
+                        Special Thanks to the Team at the TSF Bank!!! Exceptional Customer Service. I have banked here for a number of years and can’t say enough about the staff. I highly recommend banking here.
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-quote-right"></i>
+                <div class="user">
+                    <img src="{% static 'images/avatar3.svg' %}" alt="review1"/>
+                    <h3>Ranveer Shah</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="comment">
+                        Special Thanks to the Team at the TSF Bank!!! Exceptional Customer Service. I have banked here for a number of years and can’t say enough about the staff. I highly recommend banking here.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="image">
+            <img src="{% static 'images/undraw_Messaging_fun_re_vic9.svg' %}" alt="messageUs"/>
+        </div>
+        <form action="">
+            <h1 class="heading">Send us a message</h1>
+            <div class="inputBox">
+                <input type="text" required>
+                <label>Full Name</label>
+            </div>
+            <div class="inputBox">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            <div class="inputBox">
+                <input type="number" required>
+                <label>Contact Number</label>
+            </div>
+            <div class="inputBox">
+                <textarea required name="" col="30" row="10"></textarea>
+                <label>Your Message</label>
+            </div>
+            <input type="submit" class="btn" value="Submit">
+        </form>
+    </section>
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+
+            <a href="https://www.instagram.com/dhrutiii._/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/DhrutiSeksaria" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/dhrutiseksaria/" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/dhrutii29" target="_blank" class="github"><i class="fab fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <p class="footer-links">
+                <a class="link-1" href="#home">Home</a>
+
+                <a href="#features">Features</a>
+
+                <a href="#review">Testimonial</a>
+
+                <a href="#contact">Contact</a>
+            </p>
+
+            <p>TSF Bank &copy; 2021</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

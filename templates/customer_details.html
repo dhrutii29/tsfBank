@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="icon" type="image/png" href="{% static 'images/icons8-bank-50.png' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>{{customer.name}}</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .card-container{
+            width: 300px;
+            height: 430px;
+            background: #FFF;
+            border-radius: 6px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0px 1px 10px 1px #000;
+            overflow: hidden;
+            display: inline-block;
+            }
+            .upper-container{
+            height: 150px;
+            background: #0047b4;
+            }
+            .image-container{
+            background: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            padding: 5px;
+            transform: translate(100px,100px);
+            }
+            .image-container img{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            }
+            .lower-container{
+            height: 280px;
+            background: #FFF;
+            padding: 20px;
+            padding-top: 40px;
+            text-align: center;
+            }
+            .lower-container h3{
+            box-sizing: border-box;
+            line-height: .6;
+            color: #0047b4;
+            opacity: .6;
+            font-weight: bold;
+            }
+            
+            
+            .lower-container p{
+            font-size: 16px;
+            color: gray;
+            margin-bottom: 30px;
+            }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo"><span>TSF </span>Bank</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar" class="fas fa-bars"></label>
+        <nav class="navbar">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'customers' %}">Customers</a>
+            <a href="{% url 'transfer' %}">Transfer</a>
+            <a href="{% url 'transactions' %}">Transactions</a>
+        </nav>
+    </header>
+
+    <div class="card-container">
+        <div class="upper-container">
+           <div class="image-container">
+              <img src="{{customer.img.url}}" />
+           </div>
+        </div>
+        <div class="lower-container">
+           <div>
+               <br/>
+              <h3>{{customer.name}}</h3>
+           </div>
+           <div>
+              <p><b>Account No: </b>{{customer.accno}}</p>
+              <p><b>Email Address: </b>{{customer.email}}</p>
+              <p><b>Balance: </b>{{customer.balance}}</p>
+           </div>
+           
+        </div>
+     </div>
+    
+    
+</body>
