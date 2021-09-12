@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-jmj$a#hk@vupbslhv3*j$a3^d(k%zhqw0k3nh-5jbh7xtu$!$9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    'tsfbank-django.herokuapp.com'
+]
 
 
 # Application definition
@@ -132,3 +135,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
