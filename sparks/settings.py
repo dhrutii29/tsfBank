@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-jmj$a#hk@vupbslhv3*j$a3^d(k%zhqw0k3nh-5jbh7xtu$!$9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
     'tsfbank-django.herokuapp.com'
 ]
 
